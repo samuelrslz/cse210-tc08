@@ -39,4 +39,4 @@ root                    (project root folder)
 
 ## Authors
 ---
-* # TODO: Add your names and emails here
+* Matthew Behymer (*beh20004@byui.edy)
