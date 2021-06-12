@@ -1,9 +1,9 @@
 import random
 import sys
+import time
 from game import constants
 from game.action import Action
 from game.point import Point
-
 
 class HandleCollisionsAction(Action):
     """A code template for handling collisions. The responsibility of this class of objects is to update the game state when actors collide.
@@ -22,6 +22,9 @@ class HandleCollisionsAction(Action):
         paddle = cast["paddle"][0] # there's only one
         bricks = cast["brick"]
         # ball.set_text("")
+        
+
+        # deletes the brick that the ball hits and bounces the ball
         for i in range(len(bricks)-1):
             if ball.get_position().equals(bricks[i].get_position()):
                 del bricks[i]
