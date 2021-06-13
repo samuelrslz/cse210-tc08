@@ -1,16 +1,20 @@
 import random
 import sys
 import time
+from datetime import datetime
 from game import constants
 from game.action import Action
 from game.point import Point
 
+
+starting_time = datetime.now()
 class HandleCollisionsAction(Action):
     """A code template for handling collisions. The responsibility of this class of objects is to update the game state when actors collide.
     
     Stereotype:
         Controller
     """
+
 
     def execute(self, cast):
         """Executes the action using the given actors.
@@ -43,5 +47,9 @@ class HandleCollisionsAction(Action):
             ball.set_velocity(Point(ball.get_velocity().get_x() * -1, ball.get_velocity().get_y()))
         
         if bY == constants.MAX_Y-1:
+            score = datetime.now() - starting_time
+            print(f"Your final score is {round(score.total_seconds(), 2)} seconds. --- Exiting in 5 seconds.")
+            time.sleep(5)
             sys.exit()
+            
 
